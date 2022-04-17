@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: router1
+spec:
+ rules:
+ - host: "suxx.zwr.su"
+   http:
+    paths:
+     - backend:
+        service:
+         Name: dpdrega2
+         Port: 80
+
+ - host: "like.zwr.su"
+   http:
+    paths:
+     - backend:
+        service:
+        Name: dpdrega4
+        Port: 80
+# - host: www.fuxx.zwr.su
+#   http:
+#    paths:
+#     - backend:
+#        serviceName: sss4
+#        servicePort: 80
