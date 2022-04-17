@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: mego-pod-service
+ labels:
+  env : neprod
+  owner: BarronDregaZull
+spec:
+ selector:
+  project: inhell    #selecting pods s etim label
+ ports:
+  - name      : app-listener
+    protocol  : TCP
+    port      : 80
+    targetPort: 80
+ type: LoadBalancer
