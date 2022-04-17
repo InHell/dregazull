@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: inga
+spec:
+  rules:
+  - host: "suxx.zwr.su"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/suxx.zwr"
+        backend:
+          service:
+            name: dpdrega2
+            port:
+              number: 80
+  - host: "like.zwr.su"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/like.zwr"
+        backend:
+          service:
+            name: dpdrega4
+            port:
+              number: 80
+  - host: "ped.zwr.su"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/ped.zwr"
+        backend:
+          service:
+            name: dpdrega3
+            port:
+              number: 80
