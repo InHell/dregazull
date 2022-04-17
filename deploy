@@ -1,0 +1,22 @@
+# version of deploy t.0.0.1
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dreg
+  labels:
+    app : dreg
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      project: inhell
+  template:
+    metadata:
+      labels:
+        project: inhell  # service will look for those PODS labels. rly?
+    spec:
+      containers:
+        - name : drega1
+          image: dregazull/dss:latest
+          ports:
+            - containerPort: 80
